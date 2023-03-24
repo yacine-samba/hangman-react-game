@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+/* variables */
+:root {
+  --main-color: #0f0f15;
+  --color-primary: #79ffa6;
+  --gradient-color: #79ffa6, #d0ffe0;
+  --text-color: #f0f8ff;
+  --color-dark: #111;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* body */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Archivo", sans-serif;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  font-size: 1rem;
+  margin: 1rem;
+  height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none !important;
+  transition: background-color 1s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  margin: 0;
+  cursor: default;
 }
