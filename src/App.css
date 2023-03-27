@@ -115,15 +115,13 @@ a {
   transition: 0.3s ease-out;
 }
 
-.figureContainer {
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 4px;
-  stroke-linecap: round;
-}
-
 .figurePart {
   display: none;
+}
+
+line, circle{
+  stroke: #f0f8ff;
+  stroke-width: 4px;
 }
 
 .keyboard{

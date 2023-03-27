@@ -1,5 +1,4 @@
 import React from 'react'
-import Figure from './Figure';
 import { Word } from './Word';
 
 export const Main = () => {

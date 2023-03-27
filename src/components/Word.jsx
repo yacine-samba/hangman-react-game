@@ -8,7 +8,7 @@ export const Word = () => {
 
     const { lang } = useContext(LangContext);
     const [word, setWord] = useState('');
-    const DEFAULT_TRY = 10;
+    const DEFAULT_TRY = 1;
     const [tryLetters, setTryLetters] = useState(DEFAULT_TRY);
     const [hidden, setHidden] = useState('');
     const letter = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -92,7 +92,7 @@ export const Word = () => {
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         }
-    }, [word]);
+    }, []);
 
     useEffect(() => {
         if (word || hidden) {

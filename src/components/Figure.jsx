@@ -5,28 +5,32 @@ export const Figure = ({ tryLetters }) => {
 
 
     const figure = [
+        // head
+        <circle cx="120" cy="55" r="20" fill="transparent" />,
         
-        <circle cx="90" cy="35" r="10" />,
-        <line stroke="#fff" x1="90" y1="45" x2="90" y2="90" />,
-        <line stroke="#fff" x1="90" y1="50" x2="60" y2="60" />,
-        <line stroke="#fff" x1="90" y1="50" x2="120" y2="60" />,
-        <line stroke="#fff" x1="90" y1="90" x2="60" y2="110" />,
-        <line stroke="#fff" x1="90" y1="90" x2="120" y2="110" />,
-        <line stroke="#fff" x1="90" y1="70" x2="60" y2="80" />,
-        <line stroke="#fff" x1="90" y1="70" x2="120" y2="80" />,
-        <circle cx="90" cy="40" r="5" />,
-        <line stroke="#fff" x1="85" y1="35" x2="95" y2="35" />,
-        <line stroke="#fff" x1="90" y1="40" x2="90" y2="60" />,
-        <line stroke="#fff" x1="85" y1="65" x2="95" y2="65" />,
-        <line stroke="#fff" x1="90" y1="60" x2="90" y2="90" />,
-        <line stroke="#fff" x1="85" y1="95" x2="95" y2="95" />,
-        <line stroke="#fff" x1="90" y1="90" x2="60" y2="110" />,
-        <line stroke="#fff" x1="90" y1="90" x2="120" y2="110" />
+        // body
+        <line x1="120" y1="75" x2="120" y2="170" />,
+
+        // arms
+        <line id="armL" x1="120" y1="135" x2="170" y2="95" />,
+        <line id="armR" x1="120" y1="135" x2="65" y2="120" />,
+
+        // legs
+        <line id="legR" x1="120" y1="170" x2="80" y2="225" />,
+        <line id="legR" x1="120" y1="170" x2="180" y2="225" />,
+
+        // base
+        <line id="base" x1="0" y1="250" x2="170" y2="250" />,
+        <line id="base" x1="0" y1="250" x2="0" y2="0" />,
+        <line id="base" x1="0" y1="50" x2="50" y2="0" />,
+        <line id="base" x1="0" y1="0" x2="120" y2="0" />,
+        <line id="base" x1="120" y1="0" x2="120" y2="35" />,
+
     ];
 
     return (
-        <svg width="200" height="200">
-            {figure.slice(0, tryLetters)}{/* affiche les parties de dessin correspondant au nombre d'essais restants */}
+        <svg width="400" height="400">
+            {figure.slice(0, tryLetters)}
         </svg>
 
     )
