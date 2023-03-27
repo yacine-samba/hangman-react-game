@@ -54,23 +54,7 @@ a {
   color: white
 }
 
-.Header button{
-  background: none;
-  border: none;
-  color: white;
-  padding: 1rem;
-  font-size: 2rem;
-  cursor: pointer;
-}
-.Header button svg{
-  width: 2rem;
-  height: 2rem;
-}
 
-.Header button:hover svg{
-  transform: rotate(-360deg);
-  transition: 0.3s ease-out;
-}
 
 /* main */
 
@@ -80,6 +64,153 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/* game-container */
+
+.restart{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.3s ease-in;
+}
+
+.restart::before{
+  content: "Restart";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.restart:hover::before{
+  content: "RESTART";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+.restart svg{
+  width: 2rem;
+  height: 2rem;
+}
+
+.restart:hover svg{
+  transform: rotate(-360deg);
+  transition: 0.3s ease-out;
+}
+
+.figureContainer {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.figurePart {
+  display: none;
+}
+
+.keyboard{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter{
+  text-transform: uppercase;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 6px 12.5px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.hiddenWord{
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 6px 12.5px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.incorrect {
+  background-color: #8D1B1B;
+}
+
+.fiugre-part{
+  fill: #fff;
+}
+
+.popupEnd{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popupEnd h2{
+  font-size: 6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.popupEnd button{
+  background: none;
+  border: none;
+  color: white;
+  margin: 1rem;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ffffff2f;
+  transition: 0.3s ease-in;
+}
+
+.popupEnd button:hover{
+  background-color: #ffffff2f;
+  transition: 0.3s ease-out;
+}
+
+.popupEnd p{
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+ .winner-bg .popupEnd p{
+  color: #79ffa6;
+}
+
+ .looser-bg .popupEnd p{
+  color: #8D1B1B;
 }
 
 /* footer */
