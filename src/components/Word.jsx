@@ -8,7 +8,7 @@ export const Word = () => {
 
     const { lang } = useContext(LangContext);
     const [word, setWord] = useState('');
-    const DEFAULT_TRY = 26;
+    const DEFAULT_TRY = 10;
     const [tryLetters, setTryLetters] = useState(DEFAULT_TRY);
     const [hidden, setHidden] = useState('');
     const letter = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -126,12 +126,8 @@ export const Word = () => {
             if (hidden === word) {
                 setendValue("win")
             }
-            console.log(endValue)
         }
     }, [hidden, tryLetters, word])
-
-
-console.log(isWin);
 
     return (
         <div>
