@@ -1,10 +1,7 @@
 /* variables */
 :root {
   --main-color: #0f0f15;
-  --color-primary: #79ffa6;
-  --gradient-color: #79ffa6, #d0ffe0;
   --text-color: #f0f8ff;
-  --color-dark: #111;
 }
 
 /* body */
@@ -115,13 +112,14 @@ a {
   transition: 0.3s ease-out;
 }
 
-.figurePart {
-  display: none;
+.game-container{
+  margin: auto;
 }
 
-line, circle{
-  stroke: #f0f8ff;
-  stroke-width: 4px;
+.hangman{
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
 }
 
 .keyboard{
@@ -160,12 +158,11 @@ line, circle{
   background-color: #8D1B1B;
 }
 
-.fiugre-part{
-  fill: #fff;
-}
+
 
 .popupEnd{
   position: absolute;
+  padding: 2rem;
   top: 0;
   left: 0;
   width: 100%;
@@ -175,10 +172,11 @@ line, circle{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .popupEnd h2{
-  font-size: 6rem;
+  font-size: 2.3rem;
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -232,12 +230,18 @@ line, circle{
   body {
     margin: 2rem;
   }
+  .popupEnd h2{
+    font-size: 6rem;
+  }
 }
 
 @media (min-width: 1024px) {
   /* body */
   body {
     margin: 3rem;
+  }
+  .popupEnd h2{
+    font-size: 6rem;
   }
 }
 

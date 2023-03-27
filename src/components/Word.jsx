@@ -8,7 +8,7 @@ export const Word = () => {
 
     const { lang } = useContext(LangContext);
     const [word, setWord] = useState('');
-    const DEFAULT_TRY = 1;
+    const DEFAULT_TRY = -11;
     const [tryLetters, setTryLetters] = useState(DEFAULT_TRY);
     const [hidden, setHidden] = useState('');
     const letter = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -37,7 +37,6 @@ export const Word = () => {
             })
     }
 
-
     useEffect(() => {
         fetchWord();
     }, [lang])
@@ -54,9 +53,23 @@ export const Word = () => {
             }
         })
         if (count === 0) {
-            setTryLetters(tryLetters - 1);
+            setTryLetters(tryLetters + 1);
         }
         setHidden(invisibleArray.join(''));
+    }
+    
+    const handleKeyPress = (e) => {
+        if (word) {
+            if (!letter.includes(e.key.toLowerCase())) {
+                return;
+            }
+            const letterBtn = document.querySelectorAll('.letter');
+            letterBtn.forEach(btn => {
+                if (btn.innerText.toLowerCase() === e.key.toLowerCase()) {
+                    btn.click();
+                }
+            })
+        }
     }
 
     const handleLetter = (e) => {
@@ -72,38 +85,12 @@ export const Word = () => {
         }
     }
 
-
-    const handleKeyPress = (e) => {
-        if (word) {
-            if (!letter.includes(e.key.toLowerCase())) {
-                return;
-            }
-            const letterBtn = document.querySelectorAll('.letter');
-            letterBtn.forEach(btn => {
-                if (btn.innerText.toLowerCase() === e.key.toLowerCase()) {
-                    btn.click();
-                }
-            })
-        }
-    }
-
     useEffect(() => {
         window.addEventListener('keydown', handleKeyPress);
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         }
     }, []);
-
-    useEffect(() => {
-        if (word || hidden) {
-            if (tryLetters === 0) {
-                setendValue("loose")
-            }
-            if (hidden === word) {
-                setendValue("win")
-            }
-        }
-    }, [hidden, tryLetters, word]);
 
     const handleRestart = async () => {
         setTryLetters(DEFAULT_TRY);
@@ -113,8 +100,6 @@ export const Word = () => {
             e.disabled = false;
             e.classList.remove('incorrect');
         })
-        // const hangman = document.querySelector('svg');
-        // hangman.innerHTML = '';
         setendValue(null);
     }
 
